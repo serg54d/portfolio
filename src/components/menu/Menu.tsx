@@ -36,7 +36,7 @@ const List = styled.ul`
 	display: flex;
 	width: 100%;
 	font-size: 18px;
-	
+	align-items: center;
 	
 `
 
@@ -44,7 +44,8 @@ const Item = styled.li`
 	flex: 0 1 25%;
 	display: flex;
 	row-gap: 145px;
-	
+	justify-content: center;
+	align-items: center;
 `
 const Link = styled.a`
 color: ${myTheme.colors.white.light};

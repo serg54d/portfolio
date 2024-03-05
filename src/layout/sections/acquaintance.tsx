@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
 import myPhoto from '../../assets/images/acquaintance/Sergey-Dunaev.webp';
 import myPhoto2 from '../../assets/images/acquaintance/Sergey-Dunaev.png';
+import iconSlash from '../../assets/icons-font/slashIcon.svg';
+import iconUx from '../../assets/icons-font/uxIcon.svg';
+import iconPs from '../../assets/icons-font/psIcon.svg';
+import iconUi from '../../assets/icons-font/uiIcon.svg';
+import ellipseIcon from '../../assets/icons-font/ellipseIcon.svg';
 
 export const Acquaintance = () => {
 	return (
@@ -41,7 +46,26 @@ const MyPhotoBlock = styled.div`
 	position: relative;
 	padding: 0 0 51% 0;
 	width: 100%;
-	max-width: 465px;
+	max-width: 630px;
+
+	z-index: 2;
+	
+	::before {
+		content: "";
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0);
+		border: 60px solid ${myTheme.colors.blue};
+		border-radius: 50%;
+		width: 95%;
+		height: 95%;
+		right: 5%;
+		top: 15%;
+		z-index: 0;
+		
+	}
+	
+	
+
 `
 
 const MyPhoto = styled.img`
@@ -49,9 +73,13 @@ const MyPhoto = styled.img`
 	width: 100%;
 	height: 100%;
 	top: 0;
-	left: 0;
-	object-fit: cover;
+	right: 0;
+	object-fit: contain;
 	object-position: center;
+	background-image: url(${iconSlash}), url(${iconUx}), url(${iconPs}),url(${iconUi});
+	background-repeat: no-repeat;
+	background-position:12% 23%, 0% 55%, 7% 95%, 80% 17%;
+	background-size: 90px, 90px, 90px, 90px;
 `
 const SectionMe = styled.section`
 	background: ${myTheme.colors.grey.dark};
