@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+	font-family: "ArodoraPro-Light";
+	src:
+		url(./assets/fonts/arodoraProLight.woff2) format("woff2"),
+		url(./assets/fonts/arodoraProLight.woff) format("woff");
+	font-weight: 200;
+	font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+	font-family: "NEXT ART";
+	src:
+		url(./assets/fonts/NEXTART-Bold.woff2) format("woff2"),
+		url(./assets/fonts/NEXTART-Bold.woff) format("woff");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "NEXT ART";
+	src:
+		url(./assets/fonts/NEXTART-SemiBold.woff2) format("woff2"),
+		url(./assets/fonts/NEXTART-SemiBold.woff) format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "NEXT ART";
+	src:
+		url(./assets/fonts/NEXTART.woff2) format("woff2"),
+		url(./assets/fonts/NEXTART.woff) format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Nico Moji";
+	src:
+		url(./assets/fonts/NicoMoji-Regular.woff2) format("woff2"),
+		url(./assets/fonts/NicoMoji-Regular.woff) format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	margin: 0;
+	font-family: "ArodoraPro-Light", sans-serif;
 }

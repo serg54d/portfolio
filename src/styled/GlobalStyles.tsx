@@ -1,7 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
 
+
+export const GlobalStyles = createGlobalStyle`
+		
 *,
 *::before,
 *::after {
@@ -35,6 +37,7 @@ img {
 html,
 body {
 	height: 100%;
+	font-family: "ArodoraPro-Light", "Roboto";
 }
 html {
 	/* по умолчанию */

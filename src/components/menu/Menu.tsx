@@ -7,16 +7,16 @@ export const Menu = () => {
 		<StyledMenu>
 			<List>
 				<Item>
-					<Link>Home</Link>
+					<Link href="#">Home</Link>
 				</Item>
 				<Item>
-					<Link>About me</Link>
+					<Link href="#">About me</Link>
 				</Item>
 				<Item>
-					<Link>Portfolio</Link>
+					<Link href="#">Portfolio</Link>
 				</Item>
 				<Item>
-					<Link>Contact</Link>
+					<Link href="#">Contact</Link>
 				</Item>
 			</List>
 		</StyledMenu>
@@ -30,6 +30,9 @@ const StyledMenu = styled.nav`
 	justify-content: center;
 	padding: 0 15px;
 	box-sizing: content-box;
+	@media (max-width: ${myTheme.size.mobile}) {
+		display: none;
+	}
 `;
 
 const List = styled.ul`

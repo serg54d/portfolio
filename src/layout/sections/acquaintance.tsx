@@ -56,9 +56,9 @@ const MyPhotoBlock = styled.div`
 		background-color: rgba(0, 0, 0, 0);
 		border: 60px solid ${myTheme.colors.blue};
 		border-radius: 50%;
-		width: 95%;
-		height: 95%;
-		right: 5%;
+		width: 85%;
+		height: 85%;
+		right: 10%;
 		top: 15%;
 		z-index: 0;
 		
@@ -78,7 +78,7 @@ const MyPhoto = styled.img`
 	object-position: center;
 	background-image: url(${iconSlash}), url(${iconUx}), url(${iconPs}),url(${iconUi});
 	background-repeat: no-repeat;
-	background-position:12% 23%, 0% 55%, 7% 95%, 80% 17%;
+	background-position:13% 23%, 0% 55%, 9% 90%, 78% 19%;
 	background-size: 90px, 90px, 90px, 90px;
 `
 const SectionMe = styled.section`
@@ -103,6 +103,12 @@ const Info = styled.div`
 	display: flex;
 	flex-direction: column;
 	row-gap: 27px;
+	font-family: "NEXT ART";
+	/* @mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+} */
 `;
 
 const Title = styled.h2`
@@ -125,6 +131,7 @@ const TitleMain = styled.h1`
 	font-size: 18px;
 	font-weight: 300;
 	line-height: 21px;
+	font-family: "ArodoraPro-Light";
 	
 `
 

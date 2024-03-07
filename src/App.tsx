@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Header } from './layout/header/header';
 import { Acquaintance } from './layout/sections/acquaintance';
 import { Page } from './layout/main/main';
+import { Skills } from './layout/sections/skills';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 			<Header />
 			<Page>
 				<Acquaintance />
+				<Skills />
 			</Page>
 		</Wrapper>
 

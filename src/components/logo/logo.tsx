@@ -17,6 +17,7 @@ export const Logo = () => {
 
 
 const LogoBlock = styled.a`
+	font-family: "Nico Moji";
 	display: flex;
 	color: ${myTheme.colors.white.snow};
 	font-size: 18px;
