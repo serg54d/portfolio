@@ -30,7 +30,7 @@ const StyledMenu = styled.nav`
 	justify-content: center;
 	padding: 0 15px;
 	box-sizing: content-box;
-	@media (max-width: ${myTheme.size.mobile}) {
+	@media (max-width: ${myTheme.size.tablet}) {
 		display: none;
 	}
 `;

@@ -33,6 +33,15 @@ const SkillStyled = styled.li`
 	display: flex;
 	justify-content: center;
 	min-width: 270px;
+
+	@media (max-width: ${myTheme.size.tablet}) {
+		flex: 0 1 50%;
+	}
+
+	@media (max-width: 560px) {
+		flex: 0 1 100%;
+		padding: 10px 15px;
+	}
 `
 
 const Item = styled.div`
@@ -49,6 +58,9 @@ const Item = styled.div`
 	row-gap: 50px;
 	height: 100%;
 	width: 100%;
+	@media (max-width: 560px) {
+		row-gap: 60px;
+	}
 `
 
 const IconBlock = styled.div`

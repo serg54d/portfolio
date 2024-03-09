@@ -39,8 +39,16 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
 	background-color: ${myTheme.colors.grey.light};
-	padding-top: 115px;
-	
+	padding-top: 90px;
+
+	@media (max-width: ${myTheme.size.mobile}) {
+		padding-top: 50px;
+	}
+
+	@media (max-width: 560px) {
+		padding-top: 30px;
+	}
+
 `
 const Container = styled.div`
 	max-width: ${myTheme.container.containerWidth};
@@ -58,6 +66,10 @@ const SkillList = styled.ul`
 	flex-wrap: wrap;
 	justify-content: center;
 	row-gap: 30px;
+
+	@media (max-width: 560px) {
+		row-gap: 0;
+	}
 `
 
 

@@ -61,10 +61,24 @@ const MyPhotoBlock = styled.div`
 		right: 10%;
 		top: 15%;
 		z-index: 0;
+		@media (max-width: ${myTheme.size.mobile}) {
+			border: 50px solid ${myTheme.colors.blue};
+		}
+
+		@media (max-width: ${myTheme.size.mobileSmall}) {
+			border: 45px solid ${myTheme.colors.blue};
+			width: 80%;
+			height: 80%;
+		}
 		
 	}
 	
-	
+	@media (max-width: ${myTheme.size.mobile}) {
+		padding: 0 0 62% 0;
+	}
+	@media (max-width: ${myTheme.size.mobileSmall}) {
+			padding: 0 0 78% 0;
+		}
 
 `
 
@@ -79,7 +93,15 @@ const MyPhoto = styled.img`
 	background-image: url(${iconSlash}), url(${iconUx}), url(${iconPs}),url(${iconUi});
 	background-repeat: no-repeat;
 	background-position:13% 23%, 0% 55%, 9% 90%, 78% 19%;
-	background-size: 90px, 90px, 90px, 90px;
+	
+
+	@media (max-width: ${myTheme.size.mobile}) {
+		background-size: 70px, 70px, 70px, 70px;
+	}
+
+	@media (max-width: ${myTheme.size.mobileSmall}) {
+			background-size: 62px, 62px, 62px, 62px;
+		}
 `
 const SectionMe = styled.section`
 	background: ${myTheme.colors.grey.dark};
@@ -94,6 +116,10 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	@media (max-width: ${myTheme.size.tablet}) {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 `;
 
 const Info = styled.div`
@@ -104,11 +130,18 @@ const Info = styled.div`
 	flex-direction: column;
 	row-gap: 27px;
 	font-family: "NEXT ART";
-	/* @mixin adaptiv-font($pcSize, $mobSize) {
-	$addSize: $pcSize - $mobSize;
-	$maxWidth: $maxWidth - 320;
-	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
-} */
+	display: flex;
+	@media (max-width: ${myTheme.size.tablet}) {
+			max-width: 600px;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+
+		@media (max-width: ${myTheme.size.mobile}) {
+			max-width: 550px;
+			
+		}
 `;
 
 const Title = styled.h2`
@@ -116,15 +149,17 @@ const Title = styled.h2`
 	flex-direction: column;
 	font-size: 72px;
 	font-weight: 700;
-	line-height: 82px;
+	line-height: 1.14;
 	row-gap: 27px;
+	font-size: calc((100vw - 320px) / (1920 - 320) * (72 - 38) + 38px);
 `;
 
 const TitleElement = styled.span`
 	font-size: 48px;
 	font-weight: 600;
-	line-height: 54px;
+	line-height: 1.12;
 	text-transform: uppercase;
+	font-size: calc((100vw - 320px) / (1920 - 320) * (48 - 32) + 32px);
 `
 
 const TitleMain = styled.h1`
@@ -132,7 +167,7 @@ const TitleMain = styled.h1`
 	font-weight: 300;
 	line-height: 21px;
 	font-family: "ArodoraPro-Light";
-	
+	font-size: calc((100vw - 320px) / (1920 - 320) * (18 - 20) + 20px);
 `
 
 const LinkBlock = styled.div`
