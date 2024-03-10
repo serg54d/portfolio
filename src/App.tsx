@@ -5,6 +5,7 @@ import { Acquaintance } from './layout/sections/acquaintance';
 import { Page } from './layout/main/main';
 import { Skills } from './layout/sections/skills';
 import { AboutMe } from './layout/sections/aboutMe';
+import { Portfolio } from './layout/sections/portfolio';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 				<Acquaintance />
 				<Skills />
 				<AboutMe />
+				<Portfolio></Portfolio>
 			</Page>
 		</Wrapper>
 

@@ -59,7 +59,8 @@ export const AboutMe = () => {
 
 
 const StyledAboutMe = styled.section`
-	background-color: ${myTheme.colors.grey.light}
+	background-color: ${myTheme.colors.grey.light};
+	padding: 100px 0;
 `;
 
 const Container = styled.div`
