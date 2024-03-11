@@ -1,12 +1,12 @@
 import './App.css';
 import styled from 'styled-components';
 import { Header } from './layout/header/header';
-import { Acquaintance } from './layout/sections/acquaintance';
+import { Acquaintance } from './layout/sections/Acquaintance';
 import { Page } from './layout/main/main';
-import { Skills } from './layout/sections/skills';
-import { AboutMe } from './layout/sections/aboutMe';
-import { Portfolio } from './layout/sections/portfolio';
-
+import { Skills } from './layout/sections/Skills';
+import { AboutMe } from './layout/sections/AboutMe';
+import { Portfolio } from './layout/sections/Portfolio';
+import { Footer } from './layout/footer/Footer';
 
 function App() {
 	return (
@@ -18,6 +18,7 @@ function App() {
 				<AboutMe />
 				<Portfolio></Portfolio>
 			</Page>
+			<Footer />
 		</Wrapper>
 
 

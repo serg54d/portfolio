@@ -72,6 +72,8 @@ export const Slider = () => (
 	</StyledSlider>
 );
 
+const BtnBlock = styled.div``
+
 const StyledSlider = styled.div`
 	display: flex;
 	justify-content: center;
@@ -80,21 +82,35 @@ const StyledSlider = styled.div`
 	border-radius: 29px;
 	box-shadow: 0px 4px 15px 0px rgba(27, 27, 27, 0.28);
 	width: 85%;
+	
 	max-width: 970px;
+	@media (max-width: ${myTheme.size.mobile}) {
+		width: 85%;
+	}
 `
 
 const SliderBlock = styled.div`
 	padding: 50px;
 	width: 100%;
-	
+	@media (max-width: ${myTheme.size.tablet}) {
+	padding: 40px;
+	}
+	@media (max-width: ${myTheme.size.mobile}) {
+	padding: 30px;
+	}
 `
 const StyledSlide = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	gap: 10px;
-	
+	gap: 15px;
+
+	@media (max-width: ${myTheme.size.mobile}) {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
 `
 const ImageBlock = styled.div`
 	position: relative;
@@ -125,6 +141,10 @@ const Comment = styled.div`
 	width: 100%;
 	max-width: 296px;
 	
+
+	@media (max-width: ${myTheme.size.mobile}) {
+		max-width: 80%;
+	}
 `
 
 const TitleComment = styled.h3`
@@ -136,7 +156,11 @@ const TitleComment = styled.h3`
 `
 
 const Text = styled.p`
-	
+	color: ${myTheme.colors.white.snow};
+	/* font-size: 18px; */
+	line-height: 1.17;
+	letter-spacing: 0%;
+	font-size: calc((100vw - 320px) / (1240 - 320) * (18 - 16) + 16px);
 `
 
 const Link = styled.a`

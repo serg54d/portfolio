@@ -80,10 +80,11 @@ const Block = styled.div`
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	flex-wrap: wrap;
+	
 
 	@media (max-width: ${myTheme.size.tablet}) {
 		flex-direction: column;
+		align-items: center;
 	}
 	
 `;

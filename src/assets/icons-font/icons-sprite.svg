@@ -49,4 +49,8 @@
 		<path d="M14.5 1.5L25 12L14.5 22.5" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 		<path d="M25 12H1" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 	</g>
+	<g id='arrowUp'>
+		<path d="M22.5 11.5L12 1L1.5 11.5" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M12 1L12 25" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+	</g>
 </svg>
