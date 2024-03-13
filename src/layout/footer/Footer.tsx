@@ -80,6 +80,15 @@ const Wrapper = styled.div`
 	justify-content: center;
 	align-items: flex-start;
 	gap: 55px;
+	line-height: 1.17;
+	font-size: calc((100vw - 320px) / (1240 - 320) * (18 - 20) + 20px);
+	@media (max-width: ${myTheme.size.mobile}) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: calc((100vw - 320px) / (767 - 320) * (25 - 21) + 21px);
+		text-align: center;
+	}
 `;
 
 const Menu = styled.nav`
@@ -87,12 +96,19 @@ const Menu = styled.nav`
 	align-items: center;
 	display: flex;
 	gap: 50px;
+		
 `
 
 const MenuList = styled.ul`
 	display: flex;
 	flex-direction: column;
 	gap: 18px;
+	@media (max-width: ${myTheme.size.mobile}) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 22px;
+	}
 `
 
 const MenuItem = styled.li`
@@ -108,6 +124,13 @@ const Contact = styled.div`
 	flex: 0 1 33%;
 	gap: 18px;
 	min-width: 245px;
+		@media (max-width: ${myTheme.size.mobile}) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 22px;
+	}
+	
 `
 
 const ContactTitle = styled.h4`
@@ -122,7 +145,12 @@ const Info = styled.div`
 	flex-direction: column;
 	flex: 0 1 33%;
 	gap: 55px;
-	
+		@media (max-width: ${myTheme.size.mobile}) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+	}
 `
 
 const Block = styled.div`

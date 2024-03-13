@@ -1,7 +1,8 @@
 import React from "react";
 import styled from 'styled-components';
 import { Logo } from "../../components/logo/logo";
-import { Menu } from "../../components/menu/Menu";
+import { HeaderMenu } from "./HeaderMenu";
+import { MobileMenu } from "./MobileMenu";
 import { myTheme } from "../../styled/Theme.styled";
 
 export const Header = () => {
@@ -9,52 +10,12 @@ export const Header = () => {
 		<StyledHeader>
 			<Container>
 				<Logo />
-				<Menu />
-				<BurgerMenu>
-					<BurgerMenuElement />
-				</BurgerMenu>
+				<HeaderMenu />
+				<MobileMenu />
 			</Container>
 		</StyledHeader >
 	);
 };
-
-const BurgerMenu = styled.button`
-	display: none;
-	background-color: rgb(42, 42, 42);
-	@media (max-width: ${myTheme.size.tablet}) {
-		display: block;
-		position: relative;
-		flex: 0 0 40px;
-		height: 22.5px;
-		cursor: pointer;
-		z-index: 5;
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			left: 0px;
-			position: absolute;
-			width: 100%;
-			height: 2px;
-			background-color: #fff;
-		}
-		&::before {
-			top: 0px;
-		}
-		&::after {
-			bottom: 0px;
-		}
-		span {
-			top: calc(50% - 1px);
-		}
-
-	}
-`
-
-const BurgerMenuElement = styled.span`
-	
-`
 
 const StyledHeader = styled.header`
 	z-index: 100;

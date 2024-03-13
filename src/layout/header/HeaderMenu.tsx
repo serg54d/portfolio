@@ -2,9 +2,10 @@ import React from "react";
 import styled from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
 
-export const Menu = () => {
+export const HeaderMenu = () => {
 	return (
 		<StyledMenu>
+
 			<List>
 				<Item>
 					<Link href="#">Home</Link>
