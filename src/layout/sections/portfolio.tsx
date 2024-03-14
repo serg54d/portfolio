@@ -20,7 +20,7 @@ export const Portfolio = () => {
 
 const StyledPortfolio = styled.section`
 	background-color: ${myTheme.colors.grey.dark};
-	padding: 100px 0;
+	/* padding: 100px 0; */
 `;
 
 const Container = styled.div`

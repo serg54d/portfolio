@@ -180,10 +180,21 @@ const Link = styled.a`
 	line-height: 20px;
 	color: #000;
 	border-radius: 6px;
-	box-shadow: 0px 2px 13px 0px rgba(226, 158, 0, 0.48);
+	/* box-shadow: 0px 2px 13px 0px rgba(226, 158, 0, 0.48); */
 	padding: 14px 40px;
-	background: ${myTheme.colors.orange};
+	/* background: ${myTheme.colors.orange}; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	--color: #000;
+    --hover: rgb(226, 158, 0);
+	transition: 0.3s ease-in;
+	box-shadow: inset 0 0 0 2em var(--hover);
+	:hover,
+    :focus {
+      box-shadow: inset 0 0 0 5px var(--hover);
+	  color: var(--hover);	
+	  transform: scale(1.05);
+}
+
 `

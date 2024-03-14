@@ -60,7 +60,7 @@ export const AboutMe = () => {
 
 const StyledAboutMe = styled.section`
 	background-color: ${myTheme.colors.grey.light};
-	padding: 100px 0;
+	/* padding: 100px 0; */
 `;
 
 const Container = styled.div`
@@ -81,7 +81,7 @@ const Block = styled.div`
 	justify-content: center;
 	width: 100%;
 	
-
+gap: 10px;
 	@media (max-width: ${myTheme.size.tablet}) {
 		flex-direction: column;
 		align-items: center;
@@ -94,7 +94,13 @@ const PartImages = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	flex: 0 1 25%;
-	
+	width: 100%;
+	flex-wrap: wrap;
+	@media (max-width: ${myTheme.size.tablet}) {
+		flex-direction: row;
+justify-content: center;
+gap: 10px;
+	}
 `
 
 const TextBLock = styled.div`
@@ -104,10 +110,12 @@ const TextBLock = styled.div`
 	font-weight: 300;
 	line-height: 1.2;
 	
-	flex: 1 1 50%;
+	flex: 1 1 50%;	
 
-	@media (max-width: ${myTheme.size.mobile}) {
-		background-size: 70px, 70px, 70px, 70px;
+	@media (max-width: ${myTheme.size.tablet}) {
+		flex: 1 1 50%;
+		
+		max-width: 80%;
 	}
 	
 `;
@@ -115,6 +123,7 @@ const TextItem = styled.p`
 	background-color: ${myTheme.colors.grey.dark};
 	padding:60px;
 	border-radius: 14px;
+	line-height: 1.4;
 `
 
 const PartImage = styled.div`
@@ -128,7 +137,7 @@ const PartImage = styled.div`
 const CardAboutMe = styled.div`
 	background-color: ${myTheme.colors.grey.dark};
     display: flex;
-    flex: 0 0 30%;
+    flex: 0 1 40%;
     justify-content: center;
 	border-radius: 14px;
 	
@@ -139,7 +148,7 @@ const CardAboutMeWrapper = styled.div`
     justify-content: flex-start;
     align-items: center;
     min-width: 310px;
-
+	width: 100%;
     padding: 30px;
 	@media (max-width: ${myTheme.size.tablet}) {
 		width: none;

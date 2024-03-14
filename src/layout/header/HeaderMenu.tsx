@@ -52,11 +52,22 @@ const Item = styled.li`
 	align-items: center;
 `
 const Link = styled.a`
-color: ${myTheme.colors.white.light};
-font-weight: 300;
-line-height: 21px;
-letter-spacing: 0%;
-	
+	color: ${myTheme.colors.white.light};
+	font-weight: 300;
+	line-height: 1.17;
+	letter-spacing: 0%;
+	background: linear-gradient(to right, ${myTheme.colors.blue}, ${myTheme.colors.blue} 50%, ${myTheme.colors.white.light} 50%);
+   	background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  	background-size: 200% 100%;
+    background-position: 100%;
+    transition: 0.3s;
+
+  &:hover {
+    background-position: 0 100%;
+	transform: scale(1.05);
+  }
 `
 
 

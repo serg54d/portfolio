@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import { myTheme } from "../styled/Theme.styled";
 
 
 export const GlobalStyles = createGlobalStyle`
@@ -41,5 +41,20 @@ body {
 }
 html {
 	/* по умолчанию */
+}
+
+section {
+	padding: 100px 0;
+	@media (max-width: ${myTheme.size.tablet}) {
+		padding: 70px 0;
+	}
+
+	@media (max-width: ${myTheme.size.mobile}) {
+		padding: 45px 0;
+	}
+
+	@media (max-width: ${myTheme.size.mobileSmall}) {
+		padding: 35px 0;
+	}
 }
 `

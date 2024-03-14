@@ -9,6 +9,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: 0.3s;
+}
+
+.alice-carousel__next-btn:hover,
+.alice-carousel__prev-btn:hover {
 }
 
 .alice-carousel__prev-btn {

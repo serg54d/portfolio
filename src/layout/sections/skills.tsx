@@ -39,7 +39,7 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
 	background-color: ${myTheme.colors.grey.light};
-	padding-top: 90px;
+	/* padding-top: 90px; */
 
 	@media (max-width: ${myTheme.size.mobile}) {
 		padding-top: 50px;

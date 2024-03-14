@@ -112,11 +112,27 @@ const MenuList = styled.ul`
 `
 
 const MenuItem = styled.li`
-	
+transition: 0.3s;
+	&:hover {
+    
+	transform: scale(1.03);
+  }
 `
 
 const MenuLink = styled.a`
-	color: ${myTheme.colors.white.light}
+	color: ${myTheme.colors.white.light};
+	background: linear-gradient(to right, ${myTheme.colors.blue}, ${myTheme.colors.blue} 50%, ${myTheme.colors.white.light} 50%);
+   	background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  	background-size: 200% 100%;
+    background-position: 100%;
+    transition: 0.3s;
+
+  &:hover {
+    background-position: 0 100%;
+	
+  }
 `
 const Contact = styled.div`
 	display: flex;

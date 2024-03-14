@@ -21,6 +21,7 @@ const Slide = (props: SlidePropsType) => {
 		<StyledSlide>
 			<ImageBlock>
 				<img src={props.imageSlide} alt="Проект planetka" />
+				<LinkProject href={props.linkSlide}>view project</LinkProject>
 			</ImageBlock>
 			<Comment>
 				<TitleComment>{props.title}</TitleComment>
@@ -87,6 +88,9 @@ const StyledSlider = styled.div`
 	@media (max-width: ${myTheme.size.mobile}) {
 		width: 85%;
 	}
+	@media (max-width: ${myTheme.size.mobileSmall}) {
+		width: 100%;
+	}
 `
 
 const SliderBlock = styled.div`
@@ -117,6 +121,41 @@ const ImageBlock = styled.div`
 	padding: 0 0 57% 0;
 	width: 100%;
 	max-width: 495px;
+	cursor: pointer;
+	
+	@media (max-width: ${myTheme.size.mobile}) {
+		padding: 0 0 63% 0;
+	}
+	@media (max-width: ${myTheme.size.mobileSmall}) {
+		padding: 0 0 80% 0;
+	}
+
+
+	&::before {
+		content:'';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top:0;
+		left: 0;
+		backdrop-filter: blur(8px);
+		background: rgba(0, 0, 0, 0.3);
+		z-index: 1;
+		transform: scale(0);
+		transition: 0.3s;
+		transform-origin: top left;
+	}
+
+	:hover {
+		::before{
+			transform: scale(1);
+		}
+	:hover a {
+		transform: translate(-50%, -50%) scale(1);
+
+	}
+		
+	}
 
 	img {
 		content: "";
@@ -131,6 +170,25 @@ const ImageBlock = styled.div`
 
 
 `
+
+const LinkProject = styled.a`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 10px 30px;
+	max-width: 180px;
+	background-color: #7572d5;
+	color: ${myTheme.colors.white.snow};
+	z-index: 5;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transition: 0.4s;
+	transform: translate(-50%, -50%) scale(0);
+	text-transform: uppercase;
+`
+
 const Comment = styled.div`
 	display: flex;
 	flex-direction: column;
