@@ -4,7 +4,7 @@ import { myTheme } from "../../styled/Theme.styled";
 import myPhoto from '../../assets/images/about-me/Sergey-Dunaev.webp';
 import myPhoto2 from '../../assets/images/about-me/Sergey-Dunaev2.webp';
 import myPhoto3 from '../../assets/images/about-me/Sergey-Dunaev3.webp';
-
+import { Font } from '../../styled/Common'
 import { Title } from "../../components/title/title";
 
 export const AboutMe = () => {
@@ -33,11 +33,18 @@ export const AboutMe = () => {
 					</PartImages>
 					<TextBLock>
 						<TextItem>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam molestias suscipit optio saepe! Fugiat omnis mollitia ipsam voluptas inventore atque ipsa saepe repellendus veniam at eligendi minus, placeat blanditiis facere!
-							Perspiciatis voluptas vero voluptate numquam culpa placeat consectetur neque. Cumque aspernatur natus maiores sapiente corrupti molestiae perspiciatis maxime eligendi libero. Vitae, quasi eos? Quidem, iusto aliquam autem similique maiores fuga.
-							Quod aliquid eveniet itaque commodi! Autem doloremque eius reiciendis, corrupti, molestias quidem dolor dolorum ipsum ipsam, quod soluta! Ducimus autem nihil temporibus dolor rem cum ipsum suscipit aspernatur facilis in!
-							Sed quaerat consequuntur officia nobis. Eius natus ratione nesciunt sequi porro possimus rerum soluta eaque. Veritatis nostrum tempore quam praesentium aliquid non magnam quis, quas possimus cumque nesciunt, reiciendis atque.
-							Nam quam beatae accusantium incidunt officiis quis sequi expedita possimus voluptatem officia libero explicabo, laboriosam quaerat architecto. Ratione, labore maxime explicabo magni perspiciatis quis, animi cumque molestiae eaque, voluptatibus quod.
+							Greetings to all! My name is Sergey, I'm 21 years old. I work as an IT specialist and develop web applications.
+							Since childhood I have been interested in creativity. I live in Voronezh, Russia.
+							For me, programming is a profession of the future that will help me fulfill my dream of traveling. I do web design,
+							front-end and back-end development, as well as turnkey website creation. Why should you choose me for your project?
+							Each project I handle is approached with the utmost care and attention to detail.
+							My commitment to excellence means that I take the time to fully understand the requirements of the task,
+							the client's goals,
+							and the intended audience. I prioritize delivering top-notch quality, aiming to complete each project in a timely
+							and unique manner
+							while ensuring all requested edits and preferences are taken into account. By entrusting me with your project,
+							you can expect exceptional results and a stress-free experience, ultimately saving you valuable time and effort.
+							If you're interested in working with me or learning more about my services, please find my contact details below.
 						</TextItem>
 					</TextBLock>
 					<PartImage>
@@ -80,8 +87,8 @@ const Block = styled.div`
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	
-gap: 10px;
+	/* flex-wrap: wrap; */
+	gap: 10px;
 	@media (max-width: ${myTheme.size.tablet}) {
 		flex-direction: column;
 		align-items: center;
@@ -104,18 +111,19 @@ gap: 10px;
 `
 
 const TextBLock = styled.div`
-	max-width: 500px;
+	display: flex;
 	color: ${myTheme.colors.white.snow};
 	font-size: 20px;
-	font-weight: 300;
-	line-height: 1.2;
-	
+
 	flex: 1 1 50%;	
 
+
+
 	@media (max-width: ${myTheme.size.tablet}) {
-		flex: 1 1 50%;
-		
-		max-width: 80%;
+		width: 80%;
+	}
+	@media (max-width: ${myTheme.size.mobile}) {
+			max-width: 440px;
 	}
 	
 `;
@@ -123,7 +131,12 @@ const TextItem = styled.p`
 	background-color: ${myTheme.colors.grey.dark};
 	padding:60px;
 	border-radius: 14px;
-	line-height: 1.4;
+	${Font({ lineHeight: "1.4" })};
+	@media (max-width: ${myTheme.size.pc}) {
+		padding: 40px;
+		${Font({ lineHeight: "1.4", Fmax: 20, Fmin: 24 })};
+		
+	}
 `
 
 const PartImage = styled.div`
@@ -140,7 +153,10 @@ const CardAboutMe = styled.div`
     flex: 0 1 40%;
     justify-content: center;
 	border-radius: 14px;
-	
+	max-width: 440px;
+	@media (max-width: ${myTheme.size.mobile}) {
+		flex: 0 1 100%;
+	}
 `
 
 const CardAboutMeWrapper = styled.div`

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
 import photoProject from '../../assets/images/portfolio/portfolio.webp';
 import arrowMini from '../../assets/icons-font/arrowMini.svg'
+import { Font } from '../../styled/Common'
 
 import '../../styled/slider.css'
 import { Icon } from '../icon/Icon';
@@ -85,8 +86,8 @@ const StyledSlider = styled.div`
 	width: 85%;
 	
 	max-width: 970px;
-	@media (max-width: ${myTheme.size.mobile}) {
-		width: 85%;
+	@media (max-width: ${myTheme.size.tablet}) {
+		width: 95%;
 	}
 	@media (max-width: ${myTheme.size.mobileSmall}) {
 		width: 100%;
@@ -138,23 +139,37 @@ const ImageBlock = styled.div`
 		position: absolute;
 		top:0;
 		left: 0;
-		backdrop-filter: blur(8px);
+		backdrop-filter: blur(6px);
 		background: rgba(0, 0, 0, 0.3);
 		z-index: 1;
 		transform: scale(0);
 		transition: 0.3s;
 		transform-origin: top left;
+		@media (max-width: ${myTheme.size.tablet}) {
+			transform: scale(1);
+		}
+	}
+
+	a {
+		@media (max-width: ${myTheme.size.tablet}) {
+			
+			transform: translate(-50%, -50%) scale(1);
+		}
 	}
 
 	:hover {
 		::before{
 			transform: scale(1);
+			
+			
 		}
 	:hover a {
 		transform: translate(-50%, -50%) scale(1);
-
-	}
 		
+	}
+	
+	
+
 	}
 
 	img {
@@ -198,33 +213,43 @@ const Comment = styled.div`
 	color: ${myTheme.colors.white.snow};
 	width: 100%;
 	max-width: 296px;
-	
-
+	font-size: 18px;
 	@media (max-width: ${myTheme.size.mobile}) {
-		max-width: 80%;
+		max-width: 100%;
+		row-gap: 30px;
 	}
 `
 
 const TitleComment = styled.h3`
 	color: ${myTheme.colors.white.snow};
 	font-size: 24px;
-	line-height: 1.25;
 	letter-spacing: 0%;
+		${Font({ lineHeight: '1.25', })};	
+	@media (max-width: ${myTheme.size.pc}) {
+		
+		${Font({ Fmax: 24, Fmin: 26 })};
+		
+	}
 
 `
 
 const Text = styled.p`
 	color: ${myTheme.colors.white.snow};
-	/* font-size: 18px; */
-	line-height: 1.17;
+	
+
 	letter-spacing: 0%;
-	font-size: calc((100vw - 320px) / (1240 - 320) * (18 - 16) + 16px);
+	${Font({ lineHeight: '1.3' })};	
+	@media (max-width: ${myTheme.size.pc}) {
+		
+		${Font({ lineHeight: '1.3', Fmax: 18, Fmin: 20 })};
+		
+	}
 `
 
 const Link = styled.a`
 	color: rgb(226, 161, 0);
 	font-weight: 300;
-	font-size: 18px;
+	
 	line-height: 1.16;
 	letter-spacing: 0%;
 	position: relative;

@@ -8,6 +8,7 @@ import iconUx from '../../assets/icons-font/uxIcon.svg';
 import iconPs from '../../assets/icons-font/psIcon.svg';
 import iconUi from '../../assets/icons-font/uiIcon.svg';
 import ellipseIcon from '../../assets/icons-font/ellipseIcon.svg';
+import { Font } from '../../styled/Common'
 
 export const Acquaintance = () => {
 	return (
@@ -19,8 +20,10 @@ export const Acquaintance = () => {
 						I’m Sergey Dunaev
 					</Title>
 					<TitleMain>
-						I've been doing web design, front-end and back-end development for a year now.
-						Do you need a website design, site layout, or maybe a turnkey website? Then contact me
+						Good day! My name is Sergey, and I specialize in website development.
+						Whether you need a unique design, expert coding, or a complete website created from scratch,
+						you've come to the right place. Whether you're a startup, small business, or a large company,
+						I'm ready to bring your ideas to life. Send me a message, and let's work together to make your project a reality!
 					</TitleMain>
 					<LinkBlock>
 						<Link href="#">Contact me</Link>
@@ -116,6 +119,7 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 10px;
 	@media (max-width: ${myTheme.size.tablet}) {
 		flex-wrap: wrap;
 		justify-content: center;
@@ -129,7 +133,7 @@ const Info = styled.div`
 	display: flex;
 	flex-direction: column;
 	row-gap: 27px;
-	font-family: "NEXT ART";
+	
 	display: flex;
 	@media (max-width: ${myTheme.size.tablet}) {
 			max-width: 600px;
@@ -147,11 +151,13 @@ const Info = styled.div`
 const Title = styled.h2`
 	display: flex;
 	flex-direction: column;
-	font-size: 72px;
-	font-weight: 700;
-	line-height: 1.14;
+	
 	row-gap: 27px;
-	font-size: calc((100vw - 320px) / (1920 - 320) * (72 - 38) + 38px);
+	${Font({ family: "'NEXT ART'", weight: 700, lineHeight: "1.14" })}
+	font-size: 72px;
+	@media (max-width: ${myTheme.size.pc}) {
+			${Font({ family: "'NEXT ART'", weight: 700, lineHeight: "1.14", Fmax: 72, Fmin: 42 })}
+		}
 `;
 
 const TitleElement = styled.span`
@@ -159,15 +165,19 @@ const TitleElement = styled.span`
 	font-weight: 600;
 	line-height: 1.12;
 	text-transform: uppercase;
-	font-size: calc((100vw - 320px) / (1920 - 320) * (48 - 32) + 32px);
+	${Font({ family: "'NEXT ART'", weight: 600, lineHeight: "1.12" })}
+	@media (max-width: ${myTheme.size.pc}) {
+			${Font({ family: "'NEXT ART'", weight: 600, lineHeight: "1.12", Fmax: 48, Fmin: 36 })}
+		}
 `
 
 const TitleMain = styled.h1`
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 300;
-	line-height: 21px;
-	font-family: "ArodoraPro-Light";
-	font-size: calc((100vw - 320px) / (1920 - 320) * (18 - 20) + 20px);
+	${Font({ lineHeight: "1.3" })}
+	@media (max-width: ${myTheme.size.pc}) {
+			${Font({ lineHeight: "1.3", Fmax: 20, Fmin: 22 })}
+		}
 `
 
 const LinkBlock = styled.div`
