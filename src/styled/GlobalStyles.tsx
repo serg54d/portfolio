@@ -38,6 +38,7 @@ html,
 body {
 	height: 100%;
 	font-family: "ArodoraPro-Light", "Roboto";
+	min-width: 320px;
 }
 html {
 	/* по умолчанию */

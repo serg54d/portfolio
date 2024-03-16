@@ -9,6 +9,7 @@ import iconPs from '../../assets/icons-font/psIcon.svg';
 import iconUi from '../../assets/icons-font/uiIcon.svg';
 import ellipseIcon from '../../assets/icons-font/ellipseIcon.svg';
 import { Font } from '../../styled/Common'
+import Typewriter from 'typewriter-effect';
 
 export const Acquaintance = () => {
 	return (
@@ -19,12 +20,21 @@ export const Acquaintance = () => {
 						<TitleElement>Hello</TitleElement>
 						I’m Sergey Dunaev
 					</Title>
+
 					<TitleMain>
-						Good day! My name is Sergey, and I specialize in website development.
-						Whether you need a unique design, expert coding, or a complete website created from scratch,
-						you've come to the right place. Whether you're a startup, small business, or a large company,
-						I'm ready to bring your ideas to life. Send me a message, and let's work together to make your project a reality!
+						<p>A web developer", "A Frontend developer", "A web designer</p>
+						<Typewriter
+							options={{
+								strings: ["A web developer", "A Frontend developer", "A web designer"],
+								autoStart: true,
+								loop: true,
+								delay: 100,
+							}}
+						/>
+
 					</TitleMain>
+
+
 					<LinkBlock>
 						<Link href="#">Contact me</Link>
 					</LinkBlock>
@@ -172,12 +182,16 @@ const TitleElement = styled.span`
 `
 
 const TitleMain = styled.h1`
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: 300;
 	${Font({ lineHeight: "1.3" })}
 	@media (max-width: ${myTheme.size.pc}) {
-			${Font({ lineHeight: "1.3", Fmax: 20, Fmin: 22 })}
+			${Font({ lineHeight: "1.3", Fmax: 24, Fmin: 22 })}
 		}
+	
+	p {
+		display: none;
+	}
 `
 
 const LinkBlock = styled.div`
