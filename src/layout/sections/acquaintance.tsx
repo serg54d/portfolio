@@ -10,6 +10,7 @@ import iconUi from '../../assets/icons-font/uiIcon.svg';
 import ellipseIcon from '../../assets/icons-font/ellipseIcon.svg';
 import { Font } from '../../styled/Common'
 import Typewriter from 'typewriter-effect';
+import Tilt from 'react-parallax-tilt';
 
 export const Acquaintance = () => {
 	return (
@@ -40,9 +41,14 @@ export const Acquaintance = () => {
 					</LinkBlock>
 
 				</Info>
-				<MyPhotoBlock>
+				<Tilt style={{ width: '100%', maxWidth: '630px' }}>
+					<MyPhotoBlock>
+						<MyPhoto src={myPhoto} />
+					</MyPhotoBlock>
+				</Tilt>
+				{/* <Tilt>
 					<MyPhoto src={myPhoto} />
-				</MyPhotoBlock>
+				</Tilt> */}
 				{/* <picture>
 					<source srcset={myPhoto} type="image/webp" />
 					<source srcset={myPhoto2} type="image/png" />
@@ -57,7 +63,7 @@ export const Acquaintance = () => {
 
 const MyPhotoBlock = styled.div`
 	position: relative;
-	padding: 0 0 51% 0;
+	padding: 0 0 100% 0;
 	width: 100%;
 	max-width: 630px;
 
