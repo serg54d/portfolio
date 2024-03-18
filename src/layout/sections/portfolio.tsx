@@ -7,7 +7,7 @@ import photoProject from '../../assets/images/portfolio/portfolio.webp';
 
 export const Portfolio = () => {
 	return (
-		<StyledPortfolio >
+		<StyledPortfolio id="portfolio">
 			<Container>
 				<Title title={"Portfolio"} />
 				<Slider></Slider>

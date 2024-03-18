@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
+import { Link } from "react-scroll";
 
 export const HeaderMenu = () => {
 	return (
@@ -8,16 +9,48 @@ export const HeaderMenu = () => {
 
 			<List>
 				<Item>
-					<Link href="#">Home</Link>
+					<NavLink
+						to="home"
+						smooth={true}
+						activeClass="active"
+						spy={true}
+
+					>
+						Home
+					</NavLink>
 				</Item>
 				<Item>
-					<Link href="#">About me</Link>
+					<NavLink
+						to="aboutMe"
+						smooth={true}
+						activeClass="active"
+						spy={true}
+						offset={-25}
+					>
+						About me
+					</NavLink>
 				</Item>
 				<Item>
-					<Link href="#">Portfolio</Link>
+					<NavLink
+						to="portfolio"
+						smooth={true}
+						activeClass="active"
+						spy={true}
+					>
+						Portfolio
+					</NavLink>
 				</Item>
 				<Item>
-					<Link href="#">Contact</Link>
+					<NavLink
+						to="contact"
+						smooth={true}
+						activeClass="active"
+						spy={true}
+						offset={-500}
+
+					>
+						Contact
+					</NavLink>
 				</Item>
 			</List>
 		</StyledMenu>
@@ -51,7 +84,7 @@ const Item = styled.li`
 	justify-content: center;
 	align-items: center;
 `
-const Link = styled.a`
+const NavLink = styled(Link)`
 	color: ${myTheme.colors.white.light};
 	font-weight: 300;
 	line-height: 1.17;
@@ -63,8 +96,9 @@ const Link = styled.a`
   	background-size: 200% 100%;
     background-position: 100%;
     transition: 0.3s;
+	cursor: pointer;
 
-  &:hover {
+  &:hover, &.active {
     background-position: 0 100%;
 	transform: scale(1.05);
   }

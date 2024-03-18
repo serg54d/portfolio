@@ -7,10 +7,12 @@ import { Skills } from './layout/sections/Skills';
 import { AboutMe } from './layout/sections/AboutMe';
 import { Portfolio } from './layout/sections/Portfolio';
 import { Footer } from './layout/footer/Footer';
+import { Particle } from './components/particle/Particle';
 
 function App() {
 	return (
 		<Wrapper>
+			<Particle />
 			<Header />
 			<Page>
 				<Acquaintance />

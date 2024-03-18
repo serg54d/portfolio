@@ -20,7 +20,8 @@ export const Header = () => {
 const StyledHeader = styled.header`
 	z-index: 100;
 	padding: 25px 0px;
-	position: absolute;
+	position: fixed;
+	background-color: ${myTheme.colors.grey.dark};
 	width: 100%;
 	overflow: hidden;
 `;

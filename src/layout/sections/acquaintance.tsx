@@ -14,7 +14,7 @@ import Tilt from 'react-parallax-tilt';
 
 export const Acquaintance = () => {
 	return (
-		<SectionMe>
+		<SectionMe id="home">
 			<Container>
 				<Info>
 					<Title>

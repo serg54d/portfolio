@@ -2,10 +2,11 @@ import React from "react";
 import styled from 'styled-components';
 import { Icon } from "../icon/Icon";
 import { myTheme } from "../../styled/Theme.styled";
+import { animateScroll as scroll } from "react-scroll";
 
 export const Logo = () => {
 	return (
-		<LogoBlock href="#">
+		<LogoBlock onClick={() => { scroll.scrollToTop() }}>
 			<LogoBlock>
 				<Icon iconId={'headerLogo'} iconWidth='65px' iconHeight="48px" iconViewBox="0" />
 				<h2>Notitanic</h2>
@@ -28,6 +29,7 @@ const LogoBlock = styled.a`
 	justify-content: center;
 	column-gap: 10px;
 	transition: .3s;
+	cursor: pointer;
 	
 
 	:hover {

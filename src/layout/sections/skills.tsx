@@ -38,6 +38,7 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
+position: relative;
 	background-color: ${myTheme.colors.grey.light};
 	/* padding-top: 90px; */
 

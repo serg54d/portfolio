@@ -9,7 +9,7 @@ import { Title } from "../../components/title/title";
 
 export const AboutMe = () => {
 	return (
-		<StyledAboutMe >
+		<StyledAboutMe id="aboutMe" >
 			<Container>
 				<Title title={"About me"} />
 				<Block>
@@ -68,6 +68,7 @@ export const AboutMe = () => {
 const StyledAboutMe = styled.section`
 	background-color: ${myTheme.colors.grey.light};
 	/* padding: 100px 0; */
+	position: relative;
 `;
 
 const Container = styled.div`

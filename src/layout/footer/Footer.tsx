@@ -3,27 +3,44 @@ import styled from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
 import { Logo } from "../../components/logo/logo";
 import { Icon } from "../../components/icon/Icon";
+import { Link } from "react-scroll";
 
 
 
 export const Footer = () => {
 	return (
-		<StyledFooter>
+		<StyledFooter id="contact">
 			<Container>
 				<Wrapper>
 					<Menu>
 						<MenuList>
 							<MenuItem>
-								<MenuLink href="#">Home</MenuLink>
+								<MenuLink
+									to="home"
+								>
+									Home
+								</MenuLink>
 							</MenuItem>
 							<MenuItem>
-								<MenuLink href="#">About me</MenuLink>
+								<MenuLink
+									to="aboutMe"
+								>
+									About me
+								</MenuLink>
 							</MenuItem>
 							<MenuItem>
-								<MenuLink href="#">Portfolio</MenuLink>
+								<MenuLink
+									to="portfolio"
+								>
+									Portfolio
+								</MenuLink>
 							</MenuItem>
 							<MenuItem>
-								<MenuLink href="#">Contact</MenuLink>
+								<MenuLink
+									to="contact"
+								>
+									Contact
+								</MenuLink>
 							</MenuItem>
 						</MenuList>
 					</Menu>
@@ -58,6 +75,7 @@ const StyledFooter = styled.footer`
 	background-color: ${myTheme.colors.grey.light};
 	color: ${myTheme.colors.white.light};
 	padding: 50px 0;
+	position: relative;
 `;
 
 const Container = styled.div`
@@ -119,7 +137,7 @@ transition: 0.3s;
   }
 `
 
-const MenuLink = styled.a`
+const MenuLink = styled(Link)`
 	color: ${myTheme.colors.white.light};
 	background: linear-gradient(to right, ${myTheme.colors.blue}, ${myTheme.colors.blue} 50%, ${myTheme.colors.white.light} 50%);
    	background-clip: text;
