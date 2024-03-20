@@ -3,36 +3,42 @@ import styled from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
 import { Icon } from "../../components/icon/Icon";
 import { Skill } from "../../components/skillItem/SkillItem";
-
+import { Bounce, Fade, Hinge, JackInTheBox, Slide, Zoom } from "react-awesome-reveal";
 
 export const Skills = () => {
 	return (
+
 		<StyledSkills>
 			<Container>
-				<SkillList>
-					<Skill iconId={"productDesignIcon"}
-						iconWidth={"96"}
-						iconHeight={"96"}
-						iconViewBox={"0 0 96 96"}
-						title={"Product Design"} />
-					<Skill iconId={"uxuiIcon"}
-						iconWidth={"143"}
-						iconHeight={"48"}
-						iconViewBox={"0 0 143 48"}
-						title={"UX/UI Design"} />
-					<Skill iconId={"designIcon"}
-						title={"Icon Design"} />
-					<Skill iconId={"logoIcon"}
-						title={"Logo Design"} />
-					<Skill iconId={"logoIcon"}
-						title={"Logo Design"} />
-					<Skill iconId={"logoIcon"}
-						title={"Logo Design"} />
-					<Skill iconId={"logoIcon"}
-						title={"Logo Design"} />
-				</SkillList>
+				<Slide
+					triggerOnce
+					direction="up"
+				>
+					<SkillList>
+						<Skill iconId={"productDesignIcon"}
+							iconWidth={"96"}
+							iconHeight={"96"}
+							iconViewBox={"0 0 96 96"}
+							title={"Product Design"} />
+						<Skill iconId={"uxuiIcon"}
+							iconWidth={"143"}
+							iconHeight={"48"}
+							iconViewBox={"0 0 143 48"}
+							title={"UX/UI Design"} />
+						<Skill iconId={"designIcon"}
+							title={"Icon Design"} />
+						<Skill iconId={"logoIcon"}
+							title={"Logo Design"} />
+						<Skill iconId={"logoIcon"}
+							title={"Logo Design"} />
+						<Skill iconId={"logoIcon"}
+							title={"Logo Design"} />
+						<Skill iconId={"logoIcon"}
+							title={"Logo Design"} />
+					</SkillList>
+				</Slide>
 			</Container>
-		</StyledSkills>
+		</StyledSkills >
 
 	)
 };
@@ -62,12 +68,12 @@ const Container = styled.div`
 `;
 
 const SkillList = styled.ul`
+
 	display: flex;
 	margin: 0 -15px;
 	flex-wrap: wrap;
 	justify-content: center;
 	row-gap: 30px;
-
 	@media (max-width: 560px) {
 		row-gap: 0;
 	}

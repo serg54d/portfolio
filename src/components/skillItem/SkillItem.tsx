@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
 import { Icon } from "../../components/icon/Icon";
-
+import { Fade } from "react-awesome-reveal";
 
 type SkillPropsType = {
 	iconId: string;

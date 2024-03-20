@@ -124,7 +124,8 @@ const TextBLock = styled.div`
 		width: 80%;
 	}
 	@media (max-width: ${myTheme.size.mobile}) {
-			max-width: 440px;
+			max-width: 550px;
+			width: 100%;
 	}
 	
 `;

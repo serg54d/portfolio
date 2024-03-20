@@ -4,6 +4,7 @@ import { myTheme } from "../../styled/Theme.styled";
 import { Logo } from "../../components/logo/logo";
 import { Icon } from "../../components/icon/Icon";
 import { Link } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 
 
 
@@ -17,6 +18,8 @@ export const Footer = () => {
 							<MenuItem>
 								<MenuLink
 									to="home"
+									smooth={true}
+									spy={true}
 								>
 									Home
 								</MenuLink>
@@ -24,6 +27,9 @@ export const Footer = () => {
 							<MenuItem>
 								<MenuLink
 									to="aboutMe"
+									smooth={true}
+									spy={true}
+									offset={-25}
 								>
 									About me
 								</MenuLink>
@@ -31,6 +37,8 @@ export const Footer = () => {
 							<MenuItem>
 								<MenuLink
 									to="portfolio"
+									smooth={true}
+									spy={true}
 								>
 									Portfolio
 								</MenuLink>
@@ -38,6 +46,9 @@ export const Footer = () => {
 							<MenuItem>
 								<MenuLink
 									to="contact"
+									smooth={true}
+									spy={true}
+									offset={-500}
 								>
 									Contact
 								</MenuLink>
@@ -54,7 +65,7 @@ export const Footer = () => {
 						<Block>
 
 							<Logo />
-							<IconBlock>
+							<IconBlock onClick={() => { scroll.scrollToTop() }}>
 								<Icon iconId='arrowUp' iconViewBox='0 0 26 24' iconWidth='26' iconHeight='24' />
 							</IconBlock>
 						</Block>
@@ -146,7 +157,7 @@ const MenuLink = styled(Link)`
   	background-size: 200% 100%;
     background-position: 100%;
     transition: 0.3s;
-
+cursor: pointer;
   &:hover {
     background-position: 0 100%;
 	
@@ -200,6 +211,12 @@ const IconBlock = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: 0.3s;
+	cursor: pointer;
+	&:hover{
+		opacity: 0.8;
+		transform: scale(1.05)
+	}
 `
 
 const Copyright = styled.p`

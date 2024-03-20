@@ -11,8 +11,14 @@ import ellipseIcon from '../../assets/icons-font/ellipseIcon.svg';
 import { Font } from '../../styled/Common'
 import Typewriter from 'typewriter-effect';
 import Tilt from 'react-parallax-tilt';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+import { Form } from '../../components/form/Form'
+import { relative } from "path";
+
 
 export const Acquaintance = () => {
+
 	return (
 		<SectionMe id="home">
 			<Container>
@@ -34,11 +40,13 @@ export const Acquaintance = () => {
 						/>
 
 					</TitleMain>
-
-
 					<LinkBlock>
-						<Link href="#">Contact me</Link>
+						<Link>Contact me</Link>
 					</LinkBlock>
+
+
+
+
 
 				</Info>
 				<Tilt style={{ width: '100%', maxWidth: '630px' }}>
@@ -57,9 +65,12 @@ export const Acquaintance = () => {
 
 			</Container>
 
-		</SectionMe>
+		</SectionMe >
 	)
 };
+
+
+
 
 const MyPhotoBlock = styled.div`
 	position: relative;
@@ -204,7 +215,7 @@ const LinkBlock = styled.div`
 	display: flex;
 `
 
-const Link = styled.a`
+const Link = styled.button`
 	font-size: 18px;
 	font-weight: 700;
 	line-height: 20px;

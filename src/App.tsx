@@ -9,8 +9,10 @@ import { Portfolio } from './layout/sections/Portfolio';
 import { Footer } from './layout/footer/Footer';
 import { Particle } from './components/particle/Particle';
 
+
 function App() {
 	return (
+
 		<Wrapper>
 			<Particle />
 			<Header />
@@ -21,7 +23,7 @@ function App() {
 				<Portfolio></Portfolio>
 			</Page>
 			<Footer />
-		</Wrapper>
+		</Wrapper >
 
 
 

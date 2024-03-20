@@ -10,15 +10,18 @@
 	align-items: center;
 	justify-content: center;
 	transition: 0.3s;
+	cursor: pointer;
 }
 
 .alice-carousel__next-btn:hover,
 .alice-carousel__prev-btn:hover {
+	opacity: 0.8;
+	transform: scale(1.05);
 }
 
 .alice-carousel__prev-btn {
 	position: absolute;
-	left: -16%;
+	left: -17%;
 	top: 45%;
 	width: max-content;
 	height: max-content;
@@ -29,13 +32,17 @@
 
 .alice-carousel__next-btn {
 	position: absolute;
-	right: -16%;
+	right: -17%;
 	top: 45%;
 	width: max-content;
 	height: max-content;
 	max-width: 55px;
 	max-height: 55px;
 	z-index: 3;
+}
+
+.alice-carousel__wrapper {
+	max-height: 500px !important;
 }
 
 @media (max-width: 991.98px) {
@@ -56,5 +63,26 @@
 		background: none;
 		text-align: right;
 		padding: 20px;
+	}
+	.alice-carousel__wrapper {
+		max-height: 450px !important;
+	}
+}
+
+@media (max-width: 767.68px) {
+	.alice-carousel__wrapper {
+		max-height: 680px !important;
+	}
+}
+
+@media (max-width: 479.98px) {
+	.alice-carousel__wrapper {
+		max-height: 720px !important;
+	}
+}
+
+@media (max-width: 380.98px) {
+	.alice-carousel__wrapper {
+		max-height: 730px !important;
 	}
 }

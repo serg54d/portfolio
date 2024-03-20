@@ -37,7 +37,7 @@ const Slide = (props: SlidePropsType) => {
 
 const items = [
 	<Slide text={
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut orci eu elit consequat posuere ut sed elit. Nulla et tristique felis. Morbi quis orci non purus blandit fringilla. Etiam et mollis eros. Duis venenatis vulputate lacus, non tristique eros placerat vel. Nam nec magna lacus. Etiam euismod egestas mauris nec mollis. Phasellus efficitur et ex vel condimentum. Cras enim purus, tempor sed massa vel, accumsan bibendum magna. Nullam hendrerit cursus purus, sit amet viverra arcu gravida vel.'
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec magna lacus. Etiam euismod egestas mauris nec mollis. Phasellus efficitur et ex vel condimentum. Cras enim purus, tempor sed massa vel, accumsan bibendum magna. Nullam hendrerit cursus purus, sit amet viverra arcu gravida vel.'
 	}
 		title={'Landing Ice-cream'}
 		imageSlide={photoProject}
@@ -58,6 +58,9 @@ export const Slider = () => (
 			<AliceCarousel
 				mouseTracking
 				disableDotsControls
+				autoHeight
+
+
 				renderPrevButton={() => {
 					return (
 						<Icon iconId='arrowPrev' iconViewBox='0 0 26 24' iconWidth='26' iconHeight='24' />
@@ -96,7 +99,7 @@ const StyledSlider = styled.div`
 
 const SliderBlock = styled.div`
 	padding: 50px;
-	width: 100%;
+	width: 99%;
 	@media (max-width: ${myTheme.size.tablet}) {
 	padding: 40px;
 	}
@@ -114,6 +117,7 @@ const StyledSlide = styled.div`
 	@media (max-width: ${myTheme.size.mobile}) {
 		flex-wrap: wrap;
 		justify-content: center;
+		gap: 40px;
 	}
 
 `
@@ -139,7 +143,7 @@ const ImageBlock = styled.div`
 		position: absolute;
 		top:0;
 		left: 0;
-		backdrop-filter: blur(6px);
+		backdrop-filter: blur(2px);
 		background: rgba(0, 0, 0, 0.3);
 		z-index: 1;
 		transform: scale(0);
@@ -152,7 +156,6 @@ const ImageBlock = styled.div`
 
 	a {
 		@media (max-width: ${myTheme.size.tablet}) {
-			
 			transform: translate(-50%, -50%) scale(1);
 		}
 	}
@@ -199,7 +202,7 @@ const LinkProject = styled.a`
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transition: 0.4s;
+	transition: 0.3s;
 	transform: translate(-50%, -50%) scale(0);
 	text-transform: uppercase;
 `

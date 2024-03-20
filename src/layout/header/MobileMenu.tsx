@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
+import { Link } from "react-scroll";
 interface RootProps {
 	isOpen: boolean;
 }
@@ -8,6 +9,7 @@ interface RootProps {
 export const MobileMenu = () => {
 	const [menuIsOpen, setMenuIsOpen] = useState(false)
 	const onBurgerBtnClick = () => { setMenuIsOpen(!menuIsOpen) }
+	const onLinkClick = () => { setMenuIsOpen(false) }
 	return (
 		<StyledMobileMenu>
 			<BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
@@ -16,16 +18,49 @@ export const MobileMenu = () => {
 			<MobileMenuPopup isOpen={menuIsOpen}>
 				<List>
 					<Item>
-						<Link href="#">Home</Link>
+						<NavLink onClick={onLinkClick}
+							to="home"
+							smooth={true}
+							activeClass="active"
+							spy={true}
+
+						>
+							Home
+						</NavLink>
 					</Item>
 					<Item>
-						<Link href="#">About me</Link>
+						<NavLink onClick={onLinkClick}
+							to="aboutMe"
+							smooth={true}
+							activeClass="active"
+							spy={true}
+							offset={-70}
+
+						>
+							Aboute Me
+						</NavLink>
 					</Item>
 					<Item>
-						<Link href="#">Portfolio</Link>
+						<NavLink onClick={onLinkClick}
+							to="portfolio"
+							smooth={true}
+							activeClass="active"
+							spy={true}
+							offset={-70}
+						>
+							Portfolio
+						</NavLink>
 					</Item>
 					<Item>
-						<Link href="#">Contact</Link>
+						<NavLink onClick={onLinkClick}
+							to="contact"
+							smooth={true}
+							activeClass="active"
+							spy={true}
+							offset={-60}
+						>
+							Contact
+						</NavLink>
 					</Item>
 				</List>
 			</MobileMenuPopup>
@@ -131,13 +166,13 @@ padding: 30px;
 `
 
 const Item = styled.li`
-	flex: 0 1 25%;
+	flex: 0 1 15%;
 	display: flex;
-	row-gap: 145px;
+	/* row-gap: 145px; */
 	justify-content: center;
 	align-items: center;
 `
-const Link = styled.a`
+const NavLink = styled(Link)`
 	color: ${myTheme.colors.white.light};
 	font-weight: 300;
 	line-height: 21px;
