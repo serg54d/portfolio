@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
 import 'reactjs-popup/dist/index.css';
-
+interface RootProps {
+	isOpen: boolean;
+}
 
 export const Form = () => {
-
+	const [formIsOpen, setFormIsOpen] = useState(false)
+	const onBurgerBtnClick = () => { setFormIsOpen(!formIsOpen) }
+	const onLinkClick = () => { setFormIsOpen(false) }
 	return (
 		<StyledForm>
 			<Title>Lorem ipsum dolor</Title>
@@ -37,7 +41,7 @@ const StyledForm = styled.form`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	
+	display: none;
 `
 const Title = styled.h3`
 	color: #fff;

@@ -1,33 +1,55 @@
-import React from "react";
-import styled from 'styled-components';
+import React, { ElementRef, useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
+import styled, { css } from 'styled-components';
 import { myTheme } from "../../styled/Theme.styled";
 import myPhoto from '../../assets/images/acquaintance/Sergey-Dunaev.webp';
-import myPhoto2 from '../../assets/images/acquaintance/Sergey-Dunaev.png';
 import iconSlash from '../../assets/icons-font/slashIcon.svg';
 import iconUx from '../../assets/icons-font/uxIcon.svg';
 import iconPs from '../../assets/icons-font/psIcon.svg';
 import iconUi from '../../assets/icons-font/uiIcon.svg';
-import ellipseIcon from '../../assets/icons-font/ellipseIcon.svg';
 import { Font } from '../../styled/Common'
 import Typewriter from 'typewriter-effect';
 import Tilt from 'react-parallax-tilt';
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import { Form } from '../../components/form/Form'
-import { relative } from "path";
+interface RootProps {
+	isOpen: boolean;
+}
 
 
 export const Acquaintance = () => {
+	const [formIsOpen, setFormIsOpen] = useState(false)
+	const onFormBtnClick = () => { setFormIsOpen(!formIsOpen) }
+	const onLinkClick = () => { setFormIsOpen(false) }
+	const onFormBtnClose = () => { setFormIsOpen(false) }
+	const form = useRef<ElementRef<'form'>>(null);
 
+	const sendEmail = (e: any) => {
+		e.preventDefault();
+
+		if (!form.current) return
+
+		emailjs
+			.sendForm('service_7i249jd', 'template_qc16uwy', form.current, {
+				publicKey: '8UtJZk-R4OJuUCItH',
+			})
+			.then(
+				() => {
+					console.log('SUCCESS!');
+				},
+				(error) => {
+					console.log('FAILED...', error.text);
+				},
+			);
+		e.target.reset()
+	};
 	return (
-		<SectionMe id="home">
-			<Container>
+		<SectionMe id="home" >
+			<Container isOpen={formIsOpen}>
 				<Info>
 					<Title>
 						<TitleElement>Hello</TitleElement>
 						I’m Sergey Dunaev
 					</Title>
-
 					<TitleMain>
 						<p>A web developer", "A Frontend developer", "A web designer</p>
 						<Typewriter
@@ -38,15 +60,10 @@ export const Acquaintance = () => {
 								delay: 100,
 							}}
 						/>
-
 					</TitleMain>
-					<LinkBlock>
-						<Link>Contact me</Link>
+					<LinkBlock >
+						<Link isOpen={formIsOpen} onClick={onFormBtnClick}>Contact me</Link>
 					</LinkBlock>
-
-
-
-
 
 				</Info>
 				<Tilt style={{ width: '100%', maxWidth: '630px' }}>
@@ -54,30 +71,43 @@ export const Acquaintance = () => {
 						<MyPhoto src={myPhoto} />
 					</MyPhotoBlock>
 				</Tilt>
-				{/* <Tilt>
-					<MyPhoto src={myPhoto} />
-				</Tilt> */}
-				{/* <picture>
-					<source srcset={myPhoto} type="image/webp" />
-					<source srcset={myPhoto2} type="image/png" />
-					<MyPhoto />
-				</picture> */}
+				<StyledForm ref={form} onSubmit={sendEmail} isOpen={formIsOpen}>
+					<TitleForm>
+						Write me
+						<CloseForm type="button" onClick={onFormBtnClose}>
+							<span></span>
+						</CloseForm>
+					</TitleForm>
 
+					<About>
+						<BlockInput >
+							<StyledInput placeholder="Name" name={'user_name'} type="text" required />
+						</BlockInput>
+						<BlockInput >
+							<StyledInput placeholder="email" name={'email'} type="email" required />
+						</BlockInput>
+						<BlockInput>
+							<StyledInput placeholder="Theme" name={'subject'} type="text" required />
+						</BlockInput>
+
+					</About>
+					<TextBlock>
+						<Text placeholder="Tell us about your puppers include his/her name" name={'message'} required />
+					</TextBlock>
+					<BtnBlock>
+						<BtnSubmit type="submit" />
+					</BtnBlock>
+				</StyledForm>
 			</Container>
-
 		</SectionMe >
 	)
 };
-
-
-
 
 const MyPhotoBlock = styled.div`
 	position: relative;
 	padding: 0 0 100% 0;
 	width: 100%;
 	max-width: 630px;
-
 	z-index: 2;
 	
 	::before {
@@ -138,7 +168,8 @@ const SectionMe = styled.section`
 	padding-top: 130px;
 
 `
-const Container = styled.div`
+const Container = styled.div <{ isOpen: boolean }>`
+position: relative;
 	max-width: ${myTheme.container.containerWidth};
 	box-sizing: content-box;
 	margin: 0 auto;
@@ -147,6 +178,14 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	gap: 10px;
+	${props => props.isOpen && css<{ isOpen: boolean }>`
+	z-index: 10; 	
+	position: relative;
+	>*:not(form) {
+		opacity: 0.3;
+	}
+
+	`}
 	@media (max-width: ${myTheme.size.tablet}) {
 		flex-wrap: wrap;
 		justify-content: center;
@@ -215,7 +254,7 @@ const LinkBlock = styled.div`
 	display: flex;
 `
 
-const Link = styled.button`
+const Link = styled.button <{ isOpen: boolean }>`
 	font-size: 18px;
 	font-weight: 700;
 	line-height: 20px;
@@ -238,4 +277,159 @@ const Link = styled.button`
 	  transform: scale(1.05);
 }
 
+`
+
+
+
+const StyledForm = styled.form < { isOpen: boolean }>`
+	position: absolute;
+	overflow: auto;
+	width: 100%;
+	left: 50%;
+	transform: translateX(-50%) scale(0);
+	transition: 0.5s;
+	z-index: 100;
+	max-width: 500px;
+	padding: 40px;
+	background-color: #5d62b5;
+	border-radius: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: ${myTheme.colors.grey.light};
+
+	${props => props.isOpen && css<{ isOpen: boolean }>`
+		transform: translateX(-50%) scale(1);
+	`}
+`
+const CloseForm = styled.button`
+	display: block;
+	position: absolute;
+	left: 88%;
+	top: 5%;
+	
+	width: 40px;
+	height: 22.5px;
+	background-color: inherit;
+	cursor: pointer;
+	z-index: 150;
+	transform: rotate(45deg);
+
+	span,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #fff;
+		}
+
+			&::after {
+			bottom: 0px;
+			transform: rotate(90deg);
+		bottom: calc(50% - 1px);
+		
+		}
+`
+
+const TitleForm = styled.h3`
+	color: #fff;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 900;
+	line-height: 1.17;
+	margin-bottom: 43px;
+	display: flex;
+	justify-content: center;
+`
+const About = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 22px;
+	margin: 0 -11px 22px -11px;
+	justify-content: space-between;
+	overflow: hidden;
+`
+const BlockInput = styled.div`
+	display: flex;
+	padding: 0 11px;
+	flex: 0 0 100%;
+`
+const StyledInput = styled.input`
+	outline: none;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+	padding: 10px 20px;
+	flex: 1 1 auto;
+	
+	color: #ffffff;
+	transition: all 0.3s ease 0s;
+	background-color: ${myTheme.colors.grey.light};
+	:focus {
+	
+		transform: scale(1.01);
+	}
+
+	::placeholder {
+		color: #ffffff82;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5;
+		letter-spacing: 0.15px;
+	}
+`
+const TextBlock = styled.div`
+	display: flex;
+`
+
+const Text = styled.textarea`
+	flex: 0 0 100%;
+	outline: none;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+	padding: 10px 20px;
+	flex: 1 1 auto;
+	background-color: ${myTheme.colors.grey.light};
+	color: #ffffff;
+	transition: all 0.3s ease 0s;
+	min-height: 180px;
+	margin-bottom: 30px;
+	:focus {
+		transform: scale(1.01);
+	}
+	::placeholder {
+		color: #ffffff82;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	letter-spacing: 0.15px;
+	}
+
+`
+
+const BtnBlock = styled.div`
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+`
+
+const BtnSubmit = styled.input`
+	display: flex;
+	max-width: 200px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	text-align: center;
+	color: ${myTheme.colors.white.snow};
+	background-color: rgb(0, 120, 240);
+	${Font({ family: "'NEXT ART'", weight: 700, lineHeight: "1.14" })}
+	font-size: 16px;
+	transition: 0.3s;
+
+	:hover {
+		color: rgb(0, 120, 240);
+		background-color: ${myTheme.colors.white.snow};
+	}
 `
