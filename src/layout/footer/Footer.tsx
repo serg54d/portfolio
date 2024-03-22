@@ -5,6 +5,7 @@ import { Logo } from "../../components/logo/logo";
 import { Icon } from "../../components/icon/Icon";
 import { Link } from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
+import { Font } from '../../styled/Common'
 
 
 
@@ -57,9 +58,11 @@ export const Footer = () => {
 					</Menu>
 					<Contact>
 						<ContactTitle>Contact:</ContactTitle>
-						<ContactItem>Email: notitanic33@gmail.com</ContactItem>
-						<ContactItem>Inst: notitanic33</ContactItem>
-						<ContactItem>Calls: +7 (900) - 121 - 54 -54</ContactItem>
+						<ContactItem href="mailto:serg54d@gmail.com&serg54d@bk.ru?body=Привет, ">
+							Email: serg54d@gmail.com
+						</ContactItem>
+						<ContactItem href="https://instagram.com/" target="_blank">Inst: notitanic33</ContactItem>
+						<ContactItem href="tel:+79515509694">Calls: +7 (951) - 550 - 96 -94</ContactItem>
 					</Contact>
 					<Info>
 						<Block>
@@ -110,6 +113,10 @@ const Wrapper = styled.div`
 	align-items: flex-start;
 	gap: 55px;
 	line-height: 1.17;
+	font-size: 18px;
+	@media (max-width: ${myTheme.size.pc}) {
+		${Font({ Fmax: 18, Fmin: 20 })}	
+	}
 	font-size: calc((100vw - 320px) / (1240 - 320) * (18 - 20) + 20px);
 	@media (max-width: ${myTheme.size.mobile}) {
 		flex-direction: column;
@@ -182,8 +189,23 @@ const ContactTitle = styled.h4`
 	
 `
 
-const ContactItem = styled.p`
+const ContactItem = styled.a`
+		font-size: 18px;
+		background: linear-gradient(to right, ${myTheme.colors.blue}, ${myTheme.colors.blue} 50%, ${myTheme.colors.white.snow} 50%);
+   	background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  	background-size: 200% 100%;
+    background-position: 100%;
+    transition: 0.5s;
+	cursor: pointer;
+  &:hover {
+    background-position: 0 100%;
 	
+  }
+	@media (max-width: ${myTheme.size.pc}) {
+		${Font({ Fmax: 18, Fmin: 20 })}
+	}
 `
 const Info = styled.div`
 	display: flex;

@@ -147,6 +147,7 @@ const MobileMenuPopup = styled.div < { isOpen: boolean }> `
 	align-items: center;
 	${props => props.isOpen && css<{ isOpen: boolean }>`
 		left: 0;
+		overflow: hidden;
 	`}
 
 	

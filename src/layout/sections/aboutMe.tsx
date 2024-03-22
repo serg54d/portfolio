@@ -38,13 +38,7 @@ export const AboutMe = () => {
 							For me, programming is a profession of the future that will help me fulfill my dream of traveling. I do web design,
 							front-end and back-end development, as well as turnkey website creation. Why should you choose me for your project?
 							Each project I handle is approached with the utmost care and attention to detail.
-							My commitment to excellence means that I take the time to fully understand the requirements of the task,
-							the client's goals,
-							and the intended audience. I prioritize delivering top-notch quality, aiming to complete each project in a timely
-							and unique manner
-							while ensuring all requested edits and preferences are taken into account. By entrusting me with your project,
-							you can expect exceptional results and a stress-free experience, ultimately saving you valuable time and effort.
-							If you're interested in working with me or learning more about my services, please find my contact details below.
+
 						</TextItem>
 					</TextBLock>
 					<PartImage>
@@ -104,6 +98,7 @@ const PartImages = styled.div`
 	flex: 0 1 25%;
 	width: 100%;
 	flex-wrap: wrap;
+	gap: 50px;
 	@media (max-width: ${myTheme.size.tablet}) {
 		flex-direction: row;
 justify-content: center;
@@ -165,11 +160,11 @@ const CardAboutMeWrapper = styled.div`
 	display: flex;
     justify-content: flex-start;
     align-items: center;
-    min-width: 310px;
+    min-width: 300px;
 	width: 100%;
     padding: 30px;
 	@media (max-width: ${myTheme.size.tablet}) {
-		width: none;
+		/* min-width: 0px; */
 	}
 `
 
@@ -195,5 +190,9 @@ const ImageBlock = styled.div`
 		object-position: center;
 		
 		}
+
+	@media (max-width: ${myTheme.size.tablet}) {
+		padding: 0 0 80% 0;
+	}
 `;
 

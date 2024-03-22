@@ -34,12 +34,14 @@ const LogoBlock = styled.a`
 
 	:hover {
 		color: #f1abab;
+		color: ${myTheme.colors.blue};
 		transition: 0.3s;
 		scale: 1.01;
 	}
 
 	:hover svg{
 		stroke: #f1abab;
+		stroke: ${myTheme.colors.blue};
 		transition: 0.3s;
 	}
 
