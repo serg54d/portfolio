@@ -30,10 +30,12 @@ export const Acquaintance = () => {
 	const [emailDirty, setEmailDirty] = useState(false)
 	const [themeDirty, setThemeDirty] = useState(false)
 	const [nameDirty, setNameDirty] = useState(false)
+	const [messageDirty, setMessageDirty] = useState(false)
 	const [emailError, setEmailError] = useState('Емейл не может быть пустым')
 	const [themeError, setThemeError] = useState('Тема обращения не может быть пустой')
 	const [nameError, setNameError] = useState('Имя не может быть пустым')
-	const [form, setForm] = useState<{ name: string, email: string, theme: string }>({ name: '', email: '', theme: '' })
+	const [messageError, setMessageError] = useState('Поле сообщения не может быть пустым')
+	const [form, setForm] = useState<{ name: string, email: string, theme: string, message: string }>({ name: '', email: '', theme: '', message: '' })
 	const [formValid, setFormValid] = useState(false)
 
 	const blurHandler = (e: any) => {
@@ -47,6 +49,9 @@ export const Acquaintance = () => {
 			case 'name':
 				setNameDirty(true)
 				break
+			case 'message':
+				setMessageDirty(true)
+				break
 		}
 	}
 
@@ -54,16 +59,22 @@ export const Acquaintance = () => {
 		const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 		if (!re.test(String(emailValue).toLowerCase())) {
 			setEmailError('Некорректный емейл')
-		} else {
+		}
+
+		else if (!emailValue) {
+			setEmailError('Емейл не может быть пустым')
+		}
+
+		else {
 			setEmailError('')
 		}
 	}
 
 	const themeHandler = (themeValue: any) => {
-		if (themeValue < 5 || themeValue > 60) {
+		if (themeValue.length < 5 || themeValue.length > 60) {
 			setThemeError('Слишком короткая или длинная тема')
 		}
-		if (!themeValue) {
+		else if (!themeValue) {
 			setThemeError('Тема не может быть пустой')
 		}
 		else {
@@ -80,16 +91,28 @@ export const Acquaintance = () => {
 		}
 	}
 
-	function handleChange(event: ChangeEvent<HTMLInputElement>) {
+	const messageHandler = (messageValue: any) => {
+		if (!messageValue) {
+			setMessageError('Поле сообщения не может быть пустым')
+		}
+		else {
+			setMessageError('')
+		}
+	}
+
+	function handleChange(event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) {
 		const { value, name } = event.target  // const value = event.target.value
 
 		if (name === 'name') {
 			nameHandler(value)
 		} else if (name === 'email') {
 			emailHandler(value);
-		} else {
+		} else if (name === 'message') {
+			messageHandler(value)
+		} else if (name === 'theme') {
 			themeHandler(value);
 		}
+
 
 		console.log(value, name)
 		setForm(prevState => {
@@ -101,7 +124,7 @@ export const Acquaintance = () => {
 	}
 	const sendEmail = () => {
 		console.log('form is sending...')
-		const { name, email, theme } = form;
+		const { name, email, theme, message } = form;
 		if (!name || !email || !theme) {
 			console.log('there is error')
 			if (emailError || themeError || nameError) {
@@ -120,7 +143,7 @@ export const Acquaintance = () => {
 			.then(
 				() => {
 					setFormIsSent(true)
-					setForm({ name: '', email: '', theme: '' })
+					setForm({ name: '', email: '', theme: '', message: '' })
 				},
 				(error) => {
 					console.log('FAILED...', error.text);
@@ -193,12 +216,14 @@ export const Acquaintance = () => {
 
 					</About>
 					<TextBlock>
-						<Text placeholder="Tell us about your puppers include his/her name" name={'message'} required />
+						{(messageDirty && messageError) && <div>{messageError}</div>}
+						<Text onChange={e => handleChange(e)} onBlur={e => blurHandler(e)} value={form.message} placeholder="Tell us about your puppers include his/her name" name={'message'} />
 					</TextBlock>
 					<BtnBlock>
 						<BtnSubmit disabled={formValid} type="submit" isSent={onFormSent} />
 					</BtnBlock>
 					{onFormSent && <FormSuccessfully isSent={onFormSent} >{onFormSent ? 'Успешно отправлено' : 'Заполните поля'}</FormSuccessfully>}
+					{!onFormSent && <FormNotSuccessfully isSent={!onFormSent} >{onFormSent ? 'Заполните поля' : 'Заполните поля'}</FormNotSuccessfully>}
 				</StyledForm>
 			</Container>
 		</SectionMe >
@@ -494,6 +519,7 @@ const StyledInput = styled.input`
 `
 const TextBlock = styled.div`
 	display: flex;
+	flex-direction: column;
 `
 
 const Text = styled.textarea`
@@ -562,3 +588,10 @@ const FormSuccessfully = styled.p <{ isSent: boolean }>`
 	margin-top: 30px;
 	color: ${(props) => props.isSent ? '#2be84e' : '#ff0000'};
 `
+
+const FormNotSuccessfully = styled.p <{ isSent: boolean }>`
+	text-align: center;
+	margin-top: 30px;
+	color: ${(props) => props.isSent ? '#ff0000' : '#2be84e'};
+`
+

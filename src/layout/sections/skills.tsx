@@ -27,12 +27,12 @@ export const Skills = () => {
 							title={"UX/UI Design"} />
 						<Skill iconId={"designIcon"}
 							title={"Icon Design"} />
-						<Skill iconId={"logoIcon"}
-							title={"Logo Design"} />
-						<Skill iconId={"logoIcon"}
-							title={"Logo Design"} />
-						<Skill iconId={"logoIcon"}
-							title={"Logo Design"} />
+						<Skill iconId={"frontendIcon"}
+							title={"Frontend"} />
+						<Skill iconId={"motionIcon"}
+							title={"Animation"} />
+						<Skill iconId={"backendIcon"}
+							title={"Backend"} />
 						<Skill iconId={"logoIcon"}
 							title={"Logo Design"} />
 					</SkillList>
@@ -46,7 +46,7 @@ export const Skills = () => {
 const StyledSkills = styled.section`
 position: relative;
 	background-color: ${myTheme.colors.grey.light};
-	/* padding-top: 90px; */
+	
 
 	@media (max-width: ${myTheme.size.mobile}) {
 		padding-top: 50px;

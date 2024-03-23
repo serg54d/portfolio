@@ -8,8 +8,17 @@ interface RootProps {
 
 export const MobileMenu = () => {
 	const [menuIsOpen, setMenuIsOpen] = useState(false)
-	const onBurgerBtnClick = () => { setMenuIsOpen(!menuIsOpen) }
+	const onBurgerBtnClick = () => {
+		setMenuIsOpen(!menuIsOpen)
+		if (!menuIsOpen) {
+			document.body.classList.add('menu-open')
+		} else {
+			document.body.classList.remove('menu-open')
+		}
+	}
 	const onLinkClick = () => { setMenuIsOpen(false) }
+
+
 	return (
 		<StyledMobileMenu>
 			<BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>

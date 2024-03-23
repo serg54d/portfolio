@@ -14,7 +14,7 @@ export const HeaderMenu = () => {
 						smooth={true}
 						activeClass="active"
 						spy={true}
-
+						offset={-100}
 					>
 						Home
 					</NavLink>
@@ -25,7 +25,7 @@ export const HeaderMenu = () => {
 						smooth={true}
 						activeClass="active"
 						spy={true}
-						offset={-25}
+						offset={-95}
 					>
 						About me
 					</NavLink>
@@ -36,6 +36,7 @@ export const HeaderMenu = () => {
 						smooth={true}
 						activeClass="active"
 						spy={true}
+						offset={-100}
 					>
 						Portfolio
 					</NavLink>

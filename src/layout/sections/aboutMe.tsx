@@ -6,10 +6,13 @@ import myPhoto2 from '../../assets/images/about-me/Sergey-Dunaev2.webp';
 import myPhoto3 from '../../assets/images/about-me/Sergey-Dunaev3.webp';
 import { Font } from '../../styled/Common'
 import { Title } from "../../components/title/title";
+import { Skills } from '../sections/Skills';
 
 export const AboutMe = () => {
 	return (
+
 		<StyledAboutMe id="aboutMe" >
+			<Skills />
 			<Container>
 				<Title title={"About me"} />
 				<Block>
@@ -41,16 +44,16 @@ export const AboutMe = () => {
 
 						</TextItem>
 					</TextBLock>
-					<PartImage>
-						<CardAboutMe>
-							<CardAboutMeWrapper>
+					<PartImages style={{ justifyContent: 'center' }}>
+						<CardAboutMe >
+							<CardAboutMeWrapper >
 								<ImageBlock>
 									<img src={myPhoto2} alt="SergeyDunaev" />
 								</ImageBlock>
 							</CardAboutMeWrapper>
 
 						</CardAboutMe>
-					</PartImage>
+					</PartImages>
 				</Block>
 			</Container>
 		</StyledAboutMe>
@@ -61,8 +64,19 @@ export const AboutMe = () => {
 
 const StyledAboutMe = styled.section`
 	background-color: ${myTheme.colors.grey.light};
-	/* padding: 100px 0; */
+	padding: 0 0 100px 0;
 	position: relative;
+	@media (max-width: ${myTheme.size.tablet}) {
+		padding: 70px 0;
+	}
+
+	@media (max-width: ${myTheme.size.mobile}) {
+		padding: 45px 0;
+	}
+
+	@media (max-width: ${myTheme.size.mobileSmall}) {
+		padding: 35px 0;
+	}
 `;
 
 const Container = styled.div`
@@ -116,10 +130,10 @@ const TextBLock = styled.div`
 
 
 	@media (max-width: ${myTheme.size.tablet}) {
-		width: 80%;
+		width: 100%;
 	}
 	@media (max-width: ${myTheme.size.mobile}) {
-			max-width: 550px;
+			/* max-width: 550px; */
 			width: 100%;
 	}
 	
@@ -150,9 +164,19 @@ const CardAboutMe = styled.div`
     flex: 0 1 40%;
     justify-content: center;
 	border-radius: 14px;
-	max-width: 440px;
+	max-width: 480px;
+	@media (max-width: ${myTheme.size.tablet}) {
+		/* flex: 0 1 100%; */
+		flex: 1 1 40%;
+		min-width: 340px;
+	}
 	@media (max-width: ${myTheme.size.mobile}) {
-		flex: 0 1 100%;
+		/* flex: 0 1 100%; */
+		max-width: 430px;
+	}
+	@media (max-width: ${myTheme.size.mobileSmall}) {
+		/* flex: 0 1 100%; */
+		flex: 1 1 100%;
 	}
 `
 
@@ -164,7 +188,8 @@ const CardAboutMeWrapper = styled.div`
 	width: 100%;
     padding: 30px;
 	@media (max-width: ${myTheme.size.tablet}) {
-		/* min-width: 0px; */
+		min-width: 0px;
+		padding: 25px;
 	}
 `
 

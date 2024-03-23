@@ -48,3 +48,11 @@ body {
 	margin: 0;
 	font-family: "ArodoraPro-Light", sans-serif;
 }
+
+.menu-open {
+	overflow: hidden;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+}
