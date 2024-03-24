@@ -64,9 +64,12 @@ export const AboutMe = () => {
 
 const StyledAboutMe = styled.section`
 	background-color: ${myTheme.colors.grey.light};
-	padding: 0 0 100px 0;
+	/* padding: 0 0 100px 0; */
 	position: relative;
-	@media (max-width: ${myTheme.size.tablet}) {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+	/* @media (max-width: ${myTheme.size.tablet}) {
 		padding: 70px 0;
 	}
 
@@ -76,7 +79,7 @@ const StyledAboutMe = styled.section`
 
 	@media (max-width: ${myTheme.size.mobileSmall}) {
 		padding: 35px 0;
-	}
+	} */
 `;
 
 const Container = styled.div`
@@ -173,10 +176,12 @@ const CardAboutMe = styled.div`
 	@media (max-width: ${myTheme.size.mobile}) {
 		/* flex: 0 1 100%; */
 		max-width: 430px;
+		
 	}
 	@media (max-width: ${myTheme.size.mobileSmall}) {
 		/* flex: 0 1 100%; */
 		flex: 1 1 100%;
+		min-width: auto;
 	}
 `
 

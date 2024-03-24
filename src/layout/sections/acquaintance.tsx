@@ -297,11 +297,13 @@ const MyPhoto = styled.img`
 const SectionMe = styled.section`
 	background: ${myTheme.colors.grey.dark};
 	padding-top: 130px;
+	
 
 `
 const Container = styled.div <{ isOpen: boolean }>`
 position: relative;
 	max-width: ${myTheme.container.containerWidth};
+	
 	box-sizing: content-box;
 	margin: 0 auto;
 	padding: 0 15px;
@@ -320,6 +322,9 @@ position: relative;
 	@media (max-width: ${myTheme.size.tablet}) {
 		flex-wrap: wrap;
 		justify-content: center;
+	}
+	@media (max-width: ${myTheme.size.mobileSmall}) {
+		padding: 60px 0px !important;
 	}
 `;
 
@@ -421,22 +426,31 @@ const StyledForm = styled.form < { isOpen: boolean }>`
 	position: absolute;
 	overflow: auto;
 	width: 100%;
+	/* height: 100%; */
 	left: 50%;
-	transform: translateX(-50%) scale(0);
+	bottom: 50%;
+	transform: translate(-50%, 50%) scale(0);
 	transition: 0.5s;
 	z-index: 100;
 	max-width: 500px;
 	padding: 40px;
 	background-color: #5d62b5;
-	border-radius: 40px;
+	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	background-color: ${myTheme.colors.grey.light};
+	overflow: hidden;
+	gap: 20px;
 
 	${props => props.isOpen && css<{ isOpen: boolean }>`
-		transform: translateX(-50%) scale(1);
+		transform: translate(-50%, 50%) scale(1);
 	`}
+
+	@media (max-width: ${myTheme.size.mobile}) { 
+		padding: 25px;
+			width: 95%;
+		}
 `
 const CloseForm = styled.button`
 	display: block;
@@ -450,7 +464,10 @@ const CloseForm = styled.button`
 	cursor: pointer;
 	z-index: 150;
 	transform: rotate(45deg);
-
+@media (max-width: ${myTheme.size.mobile}) { 
+	left: 86%;
+	top: 3%;
+		}
 	span,
 		&::after {
 			content: "";
@@ -476,7 +493,7 @@ const TitleForm = styled.h3`
 	font-size: 36px;
 	font-weight: 900;
 	line-height: 1.17;
-	margin-bottom: 43px;
+	/* margin-bottom: 43px; */
 	display: flex;
 	justify-content: center;
 `
@@ -484,15 +501,17 @@ const About = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: 22px;
-	margin: 0 -11px 22px -11px;
+	/* margin: 0 -11px 22px -11px; */
 	justify-content: space-between;
 	overflow: hidden;
+	width: 100%;
+	justify-content: center;
 `
 const BlockInput = styled.div`
 	display: flex;
 	flex-direction: column;
-	padding: 0 11px;
-	flex: 0 0 100%;
+
+	flex: 0 0 99%;
 `
 const StyledInput = styled.input`
 	outline: none;
@@ -523,7 +542,7 @@ const TextBlock = styled.div`
 `
 
 const Text = styled.textarea`
-	flex: 0 0 100%;
+	flex: 0 0 99%;
 	outline: none;
 	border: 2px solid #ffffff;
 	border-radius: 10px;
@@ -532,8 +551,7 @@ const Text = styled.textarea`
 	background-color: ${myTheme.colors.grey.light};
 	color: #ffffff;
 	transition: all 0.3s ease 0s;
-	min-height: 180px;
-	margin-bottom: 30px;
+	min-height: 140px;
 	:focus {
 		transform: scale(1.01);
 	}
@@ -585,13 +603,12 @@ const BtnSubmit = styled.input <{ isSent: boolean }>`
 
 const FormSuccessfully = styled.p <{ isSent: boolean }>`
 	text-align: center;
-	margin-top: 30px;
 	color: ${(props) => props.isSent ? '#2be84e' : '#ff0000'};
+
 `
 
 const FormNotSuccessfully = styled.p <{ isSent: boolean }>`
 	text-align: center;
-	margin-top: 30px;
 	color: ${(props) => props.isSent ? '#ff0000' : '#2be84e'};
 `
 

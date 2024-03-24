@@ -10,13 +10,16 @@ export const MobileMenu = () => {
 	const [menuIsOpen, setMenuIsOpen] = useState(false)
 	const onBurgerBtnClick = () => {
 		setMenuIsOpen(!menuIsOpen)
-		if (!menuIsOpen) {
+		if (menuIsOpen == false) {
 			document.body.classList.add('menu-open')
 		} else {
 			document.body.classList.remove('menu-open')
 		}
 	}
-	const onLinkClick = () => { setMenuIsOpen(false) }
+	const onLinkClick = () => {
+		setMenuIsOpen(false)
+		document.body.classList.remove('menu-open');
+	}
 
 
 	return (
@@ -168,7 +171,7 @@ const List = styled.ul`
 	font-size: 18px;
 	align-items: center;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 gap: 30px;
 font-size: 25px;
 flex: 1 1 100%;

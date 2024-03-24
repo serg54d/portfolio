@@ -49,7 +49,7 @@ export const Footer = () => {
 									to="contact"
 									smooth={true}
 									spy={true}
-									offset={-500}
+									offset={0}
 								>
 									Contact
 								</MenuLink>

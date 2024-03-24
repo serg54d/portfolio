@@ -8,42 +8,42 @@ import { Bounce, Fade, Hinge, JackInTheBox, Slide, Zoom } from "react-awesome-re
 export const Skills = () => {
 	return (
 
-		<StyledSkills>
-			<Container>
-				<Slide
-					triggerOnce
-					direction="up"
-				>
-					<SkillList>
-						<Skill iconId={"productDesignIcon"}
-							iconWidth={"96"}
-							iconHeight={"96"}
-							iconViewBox={"0 0 96 96"}
-							title={"Product Design"} />
-						<Skill iconId={"uxuiIcon"}
-							iconWidth={"143"}
-							iconHeight={"48"}
-							iconViewBox={"0 0 143 48"}
-							title={"UX/UI Design"} />
-						<Skill iconId={"designIcon"}
-							title={"Icon Design"} />
-						<Skill iconId={"frontendIcon"}
-							title={"Frontend"} />
-						<Skill iconId={"motionIcon"}
-							title={"Animation"} />
-						<Skill iconId={"backendIcon"}
-							title={"Backend"} />
-						<Skill iconId={"logoIcon"}
-							title={"Logo Design"} />
-					</SkillList>
-				</Slide>
-			</Container>
-		</StyledSkills >
+
+		<Container>
+			<Slide
+				triggerOnce
+				direction="up"
+			>
+				<SkillList>
+					<Skill iconId={"productDesignIcon"}
+						iconWidth={"96"}
+						iconHeight={"96"}
+						iconViewBox={"0 0 96 96"}
+						title={"Product Design"} />
+					<Skill iconId={"uxuiIcon"}
+						iconWidth={"143"}
+						iconHeight={"48"}
+						iconViewBox={"0 0 143 48"}
+						title={"UX/UI Design"} />
+					<Skill iconId={"designIcon"}
+						title={"Icon Design"} />
+					<Skill iconId={"frontendIcon"}
+						title={"Frontend"} />
+					<Skill iconId={"motionIcon"}
+						title={"Animation"} />
+					<Skill iconId={"backendIcon"}
+						title={"Backend"} />
+					<Skill iconId={"logoIcon"}
+						title={"Logo Design"} />
+				</SkillList>
+			</Slide>
+		</Container>
+
 
 	)
 };
 
-const StyledSkills = styled.section`
+const StyledSkills = styled.div`
 position: relative;
 	background-color: ${myTheme.colors.grey.light};
 	
