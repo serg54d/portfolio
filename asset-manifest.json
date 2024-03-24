@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.bedb5900.css",
+    "main.js": "/portfolio/static/js/main.398b0b6d.js",
+    "static/js/787.25eaef86.chunk.js": "/portfolio/static/js/787.25eaef86.chunk.js",
+    "static/media/NicoMoji-Regular.woff": "/portfolio/static/media/NicoMoji-Regular.b5ac1d80c607baff29fc.woff",
+    "static/media/Sergey-Dunaev2.webp": "/portfolio/static/media/Sergey-Dunaev2.5f1ca792f980512c0bf7.webp",
+    "static/media/Sergey-Dunaev.webp": "/portfolio/static/media/Sergey-Dunaev.2425397cd697dd5b3733.webp",
+    "static/media/arodoraProLight.woff2": "/portfolio/static/media/arodoraProLight.caece91c9c456c547627.woff2",
+    "static/media/NicoMoji-Regular.woff2": "/portfolio/static/media/NicoMoji-Regular.21402f450f965131ba56.woff2",
+    "static/media/portfolio.webp": "/portfolio/static/media/portfolio.a509d0fe06a0291b7ef0.webp",
+    "static/media/NEXTART.woff": "/portfolio/static/media/NEXTART.ae08e04259604d009caa.woff",
+    "static/media/NEXTART-SemiBold.woff": "/portfolio/static/media/NEXTART-SemiBold.f5b5cbef7d80fbc8df24.woff",
+    "static/media/NEXTART-Bold.woff": "/portfolio/static/media/NEXTART-Bold.0b10cba6b1d1ecbab45d.woff",
+    "static/media/Sergey-Dunaev3.webp": "/portfolio/static/media/Sergey-Dunaev3.ab6e09a3c2bce22a9f9f.webp",
+    "static/media/NEXTART-SemiBold.woff2": "/portfolio/static/media/NEXTART-SemiBold.8c73fd840c7ab45688bf.woff2",
+    "static/media/NEXTART.woff2": "/portfolio/static/media/NEXTART.3775dbac3adb77c8c9ec.woff2",
+    "static/media/NEXTART-Bold.woff2": "/portfolio/static/media/NEXTART-Bold.fb3d8efe0594c4c474a3.woff2",
+    "static/media/icons-sprite.svg": "/portfolio/static/media/icons-sprite.f6f6d191f8bfae34c0baba112782a9c5.svg",
+    "static/media/psIcon.svg": "/portfolio/static/media/psIcon.2b42fee49198323ac38b2ae7615fe310.svg",
+    "static/media/uxIcon.svg": "/portfolio/static/media/uxIcon.bfe24fc585b6a886c4e7ffb0ddd2e32b.svg",
+    "static/media/uiIcon.svg": "/portfolio/static/media/uiIcon.532668ef99fdb872415e39348ec65577.svg",
+    "index.html": "/portfolio/index.html",
+    "static/media/slashIcon.svg": "/portfolio/static/media/slashIcon.7aabd20de9732cbef41820c3bc8837f3.svg",
+    "static/media/arrowMini.svg": "/portfolio/static/media/arrowMini.acb5075a62c8cbb2a0684d35aeeacef5.svg",
+    "static/media/arodoraProLight.woff": "/portfolio/static/media/arodoraProLight.31d6cfe0d16ae931b73c.woff",
+    "main.bedb5900.css.map": "/portfolio/static/css/main.bedb5900.css.map",
+    "main.398b0b6d.js.map": "/portfolio/static/js/main.398b0b6d.js.map",
+    "787.25eaef86.chunk.js.map": "/portfolio/static/js/787.25eaef86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bedb5900.css",
+    "static/js/main.398b0b6d.js"
+  ]
+}
